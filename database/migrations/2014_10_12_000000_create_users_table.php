@@ -1,5 +1,6 @@
 <?php
 
+use App\Utils\Constants;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,8 +19,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone_number');
-            $table->enum("role", ["admin", "seller"])->default("user");
-            $table->enum("status", ["active", "bannded", "Waiting"])->default("active");
+            $table->enum("role", Constants::user_role)->default("user");
+            $table->enum("status", Constants::user_status)->default("active");
 
             $table->rememberToken();
             $table->timestamps();

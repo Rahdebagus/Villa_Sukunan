@@ -11,6 +11,10 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('plugins/custom/datatables/datatables.bundle.css') }}">
+        <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

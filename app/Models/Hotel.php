@@ -10,17 +10,17 @@ class Hotel extends Model
     use HasFactory;
     protected $guardate = [];
 
-    function hotel_rating()
+    function hotelRatings()
     {
-        return $this->hasMany(Hotel_Rating::class);
+        return $this->hasMany(HotelRating::class);
     }
 
-    function hotel_picture()
+    function hotelPictures()
     {
-        return $this->hasMany(Hotel_picture::class);
+        return $this->hasMany(HotelPicture::class);
     }
-    function hotel_room()
+    function hotelRooms()
     {
-        return $this->hasMany(hotel_room::class);
+        return $this->hasMany(HotelRoom::class);
     }
 }

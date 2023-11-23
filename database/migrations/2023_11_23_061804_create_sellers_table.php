@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('sellers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("user_id")->constrained("users");
             $table->string('identity_number');
             $table->string('identity_photo');
             $table->string('address');
-            $table->string('bank_acount');
+            $table->string('bank_account');
             $table->string('bank_name');
             $table->timestamps();
         });

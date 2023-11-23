@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\Seller;
+use App\Http\Controllers\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('admin')->group(function() {
+    Route::controller(Admin\UserController::class)->group(function() {
+        Route::get('/dashboard', 'dashboard')->name('admin.dashboard');
+        Route::post('/user/ban', 'banUser')->name('admin.user.ban');
+
+        Route::get('/table/get-data/user', 'getTableUser')->name('admin.table.get-data.user');
+    });
 });
 
 require __DIR__.'/auth.php';

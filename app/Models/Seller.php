@@ -10,11 +10,7 @@ class Seller extends Model
     use HasFactory;
     protected $guarded = [];
 
-
-
-
-
-    function User()
+    function user()
     {
         return $this->belongsTo(User::class);
     }

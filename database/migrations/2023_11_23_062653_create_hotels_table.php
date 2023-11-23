@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->string('photo');
+            $table->foreignId("seller_id")->constrained("sellers");
             $table->string('name');
             $table->string('address');
             $table->string('description');
             $table->string('bank_name');
+            $table->string('bank_account');
             $table->timestamps();
         });
     }
